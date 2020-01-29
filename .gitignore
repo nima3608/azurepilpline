@@ -3,3 +3,5 @@
 ################################################################################
 
 /AzureDevOps-CI/obj
+/.vs
+/AzureDevOps-CI/bin/Debug/netcoreapp2.2
