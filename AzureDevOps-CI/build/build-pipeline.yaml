@@ -9,6 +9,6 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-  echo Add other tasks to build, test, and deploy your project
-  echo See documentation
+    echo Add other tasks to build, test, and deploy your project
+    echo See documentation
   displayName: 'Run a multi-line script'
