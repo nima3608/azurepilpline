@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs
+/AzureDevOps-CI/.history
+/AzureDevOps-CI/bin
+/AzureDevOps-CI/obj
