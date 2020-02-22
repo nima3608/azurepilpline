@@ -9,20 +9,25 @@ steps:
   displayName: 'Building'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Restoring NuGet'
   inputs:
     command: 'restore'
     projects: '**/*.csproj'
     feedsToUse: 'select'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Building code'
   inputs:
     command: 'build'
     projects: '**/*.csproj'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Running tests'
   inputs:
     command: 'test'
     projects: '**Tests.csproj'
+
+
 
 - script: echo All done
   displayName: 'All done'
