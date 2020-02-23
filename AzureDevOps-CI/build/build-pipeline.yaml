@@ -5,39 +5,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Building our code
-  displayName: 'Building'
+- script: echo Hello, world!
+  displayName: 'Run a one-line script v2'
 
-- task: DotNetCoreCLI@2
-  displayName: 'Restoring NuGet'
-  inputs:
-    command: 'restore'
-    projects: '**/*.csproj'
-    feedsToUse: 'select'
-
-- task: DotNetCoreCLI@2
-  displayName: 'Building code'
-  inputs:
-    command: 'build'
-    projects: '**/*.csproj'
-
-- task: DotNetCoreCLI@2
-  displayName: 'Running tests'
-  inputs:
-    command: 'test'
-    projects: '**Tests.csproj'
-
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(system.defaultworkingdirectory)/AzureDevOps-CI/bin'
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
-
-- script: echo All done
-  displayName: 'All done'
+- script: |
+    echo Add a multiline script v2
+    echo One more v2
+  displayName: 'Run a multi-line script v2's
