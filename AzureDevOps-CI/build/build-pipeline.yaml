@@ -3,8 +3,14 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+steps:  
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+    feedsToUse: 'select'
+    vstsFeed: '95079ee0-e070-40da-9994-1433dee4c23e/7cb94a97-848f-45b2-8709-eac693d0e8db'
 
-steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script v2'
 
